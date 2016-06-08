@@ -1,0 +1,143 @@
+# Created by Octave 4.0.0, Mon May 30 11:46:15 2016 BRT <ia368n@ia368n-VirtualBox>
+# name: measurements
+# type: cell
+# rows: 1
+# columns: 7
+# name: <cell-element>
+# type: matrix
+# rows: 0
+# columns: 0
+
+
+
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: skinResponse
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 3
+# name: conductance
+# type: scalar
+-1
+
+
+# name: resistance
+# type: scalar
+6017650
+
+
+# name: conductanceVoltage
+# type: scalar
+0.508309
+
+
+
+
+
+
+
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: bpm
+# type: scalar
+99
+
+
+
+
+
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: skinResponse
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 3
+# name: conductance
+# type: scalar
+-1
+
+
+# name: resistance
+# type: scalar
+-1
+
+
+# name: conductanceVoltage
+# type: scalar
+0.58651
+
+
+
+
+
+
+
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: bpm
+# type: scalar
+699
+
+
+
+
+
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: skinResponse
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 3
+# name: conductance
+# type: scalar
+-1
+
+
+# name: resistance
+# type: scalar
+-1
+
+
+# name: conductanceVoltage
+# type: scalar
+0.469208
+
+
+
+
+
+
+
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: bpm
+# type: scalar
+699
+
+
+
+
+
+
+
