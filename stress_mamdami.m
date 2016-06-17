@@ -11,9 +11,19 @@ tic;
   evalfis ([1.2 1.2], fis, 101);
 tempoEval = toc
 
+%gensurf (fis, [1 2], 1);
+
 x_axis = linspace (fis.output(1).range(1), ...
                    fis.output(1).range(2), 101);
 colors = ['r' 'b' 'm' 'g'];
+figure ('NumberTitle', 'off', 'Name', ...
+        'Output of Fuzzy Rules 1-4 for Input = (4, 6)');
+
+for i = 1 : 25
+    %y_label = [colors(i) ";Rule " num2str(i) ";"];
+    plot (x_axis, rule_output(:,i));
+    hold on;
+endfor
 
 ylim ([-0.1, 1.6]);
 grid;

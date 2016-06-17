@@ -24,15 +24,15 @@ Version=2.0
 NumInputs=2
 NumOutputs=1
 NumRules=25
-AndMethod='min'
-OrMethod='max'
-ImpMethod='min'
-AggMethod='max'
+AndMethod='algebraic_product'
+OrMethod='bounded_sum'
+ImpMethod='prod'
+AggMethod='sum'
 DefuzzMethod='centroid'
 
 [Input1]
 Name='CondutanciaDaPele'
-Range=[0 4]
+Range=[0 5]
 NumMFs=5
 MF1='MuitoBaixa':'trimf',[-1 0 0.5]
 MF2='Baixa':'trimf',[0 0.5 1]

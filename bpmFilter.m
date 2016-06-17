@@ -24,7 +24,10 @@ function s2 = bpmFilter(s, window)
   
   for k = window:size(s, 1)
     in = f((k-window+1):k);
-    m = median(in(and(in > 400, in < m+150, in > m-150)));
+    in_valid = and(in > 400, in < m+150, in > m-150);
+    if(sum(in_valid) > 0)
+      m = median(in(in_valid));
+    end
     fflush(stdout);
     s2(k) = m;
   end
