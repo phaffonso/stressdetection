@@ -1,4 +1,4 @@
-function s2 = movingAverage(s, window)
+function s2 = movingAverage2(s, window)
   if window > size(s, 1)
     window = size(s, 1);
   end
