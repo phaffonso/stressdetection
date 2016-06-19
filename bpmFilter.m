@@ -19,7 +19,11 @@ function s2 = bpmFilter(s, window)
   end
   
   %o valor inicial de m eh a mediana dos primeiros n valores, descartando os invalidos
-  in = f(1:window);
+  j = 1;
+  while f(j) <= 400
+    j = j+1;
+  end
+  in = f(j:window+j-1);
   m = median(in(in > 400));
   
   for k = window:size(s, 1)
