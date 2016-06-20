@@ -1,5 +1,5 @@
 close all;
-fis=readfis ('stress_detection');
+fis=readfis ('stress_detection_prod');
 
 plotmf (fis, 'input', 1);
 plotmf (fis, 'input', 2);

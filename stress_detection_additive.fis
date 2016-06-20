@@ -27,7 +27,7 @@ NumRules=25
 AndMethod='min'
 OrMethod='max'
 ImpMethod='min'
-AggMethod='max'
+AggMethod='sum'
 DefuzzMethod='centroid'
 
 [Input1]

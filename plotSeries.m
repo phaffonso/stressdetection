@@ -4,7 +4,7 @@ loadFilenames;
 
 baselines = [0 0 4.2 0 0 0 0 0 0 0];
 
-for iter = 1:10
+for iter = 2:10
 iter
 if(iter > 5)
   fn = filescontrol{iter - 5}
@@ -44,20 +44,34 @@ else
   baseA = median(filteredGsr(1:50))
 end
 baseB = median(filteredHr(1:50))
-fis=readfis ('stress_detection');
-fis2=readfis ('stress_detection_sugeno');
+fis1=readfis ('stress_detection');
+fis2=readfis ('stress_detection_prod');
+fis3=readfis ('stress_detection_additive');
 tic;
 
 step = 5;
-xx = 1:step:size(measurements, 1);
-%[z0 fuzzy_output] = inferStress(filteredGsr(xx)/baseA, filteredHr(xx)/baseB, fis);
 
-#z0b = inferStress(filteredGsr/baseA, filteredHr/baseB, fis2);
+%setfis(fis, 'aggmethod', 'max');
+%setfis(fis, 'impmethod', 'min');
+%setfis(fis, 'defuzzmethod', 'centroid');
+xx = 1:step:size(measurements, 1);
+z0 = inferStress(filteredGsr(xx)/baseA, filteredHr(xx)/baseB, fis1);
+
+%setfis(fis, 'aggmethod', 'max');
+%setfis(fis, 'impmethod', 'prod');
+%setfis(fis, 'defuzzmethod', 'mom');
+z0b = inferStress(filteredGsr(xx)/baseA, filteredHr(xx)/baseB, fis2);
+
+%setfis(fis, 'aggmethod', 'sum');
+%setfis(fis, 'impmethod', 'min');
+%setfis(fis, 'defuzzmethod', 'mom');
+z0c = inferStress(filteredGsr(xx)/baseA, filteredHr(xx)/baseB, fis3);
+
 
 timeInference = toc
 #figure(5);
-plot(avgGsr/baseA, 'b'); hold on;
-plot(measurements(:, 4)/baseB, 'b');
+%plot(avgGsr/baseA, 'b'); hold on;
+%plot(measurements(:, 4)/baseB, 'b');
 plot(filteredGsr/baseA, 'g;Condutancia da Pele;'); 
 plot(filteredHr/baseB, 'r;Frequencia Cardiaca;');
 
@@ -68,7 +82,8 @@ plot(filteredHr/baseB, 'r;Frequencia Cardiaca;');
 %plot(filteredGsr, 'k;Apos filtragem;');
 
 
-plot(xx, z0, 'k;Nivel de stress (saida);');
-#plot(z0b, 'm');
+plot(xx, z0 , 'k;Nivel de stress (saida) minimo e maximo;');
+plot(xx, z0b, 'm;Nivel de stress (saida) implicacao produto;');
+plot(xx, z0c, 'c;Nivel de stress (saida) metodo aditivo;');
 
 end

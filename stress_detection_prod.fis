@@ -26,7 +26,7 @@ NumOutputs=1
 NumRules=25
 AndMethod='min'
 OrMethod='max'
-ImpMethod='min'
+ImpMethod='prod'
 AggMethod='max'
 DefuzzMethod='centroid'
 
